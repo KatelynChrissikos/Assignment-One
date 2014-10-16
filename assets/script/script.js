@@ -16,7 +16,7 @@ var maxX = window.innerWidth - 116;
 // Monster Images Array
 theImages[0] = 'images/monster1.png';
 theImages[1] = 'images/monster2.png';
-theImages[2] = 'images/monster3.png';mp=[]
+theImages[2] = 'images/monster3.png'; 
 theImages[3] = 'images/monster4.png';
 theImages[4] = 'images/bigmonster1.png';
 theImages[5] = 'images/bigmonster2.png';
@@ -25,14 +25,13 @@ theImages[5] = 'images/bigmonster2.png';
 theSplats[0] = 'images/splat1.png';
 theSplats[1] = 'images/splat2.png';
 
-var temp=[];
+var temp = [];
 
 
 // Generates Random Number To Call On The Different Monster Images
 function randomNum(min, max) {
-	return Math.floor(Math.random()* max) + min;
+	return Math.floor(Math.random() * max) + min;
 }
-
 // Creating Monsters
 
 function Monster() {
@@ -45,18 +44,18 @@ function Monster() {
 
 	// Adds Image to Empty Array if Image is there it adds a different image
 
-	for (var i=0;i<5;){
+	for (var i = 0; i < 5;){
 
-		if (temp.length===theImages.length){
-			temp=[];
+		if (temp.length === theImages.length){
+			temp = [];
 		}
 		
-		var image=theImages[randomNum(0,theImages.length)];
+		var image = theImages[randomNum(0,theImages.length)];
 		
 		if (temp.indexOf(image) == -1){
 			this.element.setAttribute('src', image);
 			temp.push(image);
-			i=10;
+			i = 10;
 		}
 
 	}
@@ -84,7 +83,7 @@ function Splat(obj) {
 			window.clearInterval(fadeOut);
 		}
 		else{
-			obj.style.opacity = obj.style.opacity-.01;
+			obj.style.opacity = obj.style.opacity -0.1;
 		}
 
 	}, 20);
